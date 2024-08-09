@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
+import { Link } from 'react-router-dom';
 import Input from 'components/common/shared/Input';
 import Button from 'components/common/shared/Button';
 
@@ -26,7 +27,9 @@ const Login = () => {
               </div>
             </div>
             <div className={styles.button}>
-              <Button width='100%'>Login now</Button>
+              <Link to="/dashboard" relative="path">
+                <Button width='100%'>Login now</Button>
+              </Link>
             </div>
             <div className={styles.registerInfo}>
               Not registered yet? <span>Register</span>

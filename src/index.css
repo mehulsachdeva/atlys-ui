@@ -18,3 +18,7 @@ body {
 #root > div {
   height: inherit;
 }
+
+a {
+  text-decoration: none;
+}
