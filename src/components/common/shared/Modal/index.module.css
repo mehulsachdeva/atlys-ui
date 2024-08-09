@@ -22,7 +22,7 @@
 .visible {
   opacity: 1;
   background: #00000020;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
 }
 
 .closeButton {
