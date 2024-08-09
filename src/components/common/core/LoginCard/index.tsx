@@ -18,8 +18,13 @@ const LoginCard = (props: LoginCardType) => {
 	}, [])
 
 	const handleSubmitClick = useCallback(() => {
+		if (isLoginForm) {
+			/** Login the user */
+		} else {
+			/** Register the user and login */
+		}
 		onSuccess?.()
-	}, [onSuccess])
+	}, [isLoginForm, onSuccess])
 
 	return (
 		<div className={styles.container}>
