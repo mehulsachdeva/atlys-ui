@@ -34,7 +34,7 @@ const Modal = (props: ModalType) => {
 				clearTimeout(timeout.current)
 			}
 		}
-	}, [isOpen])
+	}, [isOpen, animationSpeed])
 
 	const component = (
 		<div
