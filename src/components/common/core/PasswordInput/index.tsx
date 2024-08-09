@@ -1,7 +1,7 @@
 import React, { memo, useState, useLayoutEffect, useCallback } from "react"
 import styles from "./index.module.css"
 import Input from "components/common/shared/Input"
-import { Eye } from "components/common/icons/eye"
+import { Eye } from "components/common/icons/Eye"
 
 interface PasswordInputType {
 	value?: string

@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #27292D;
+  border: 2px solid #35373B;
+  border-radius: 8px;
+  padding: 24px 20px;
+  row-gap: 16px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 30px;
+}
+
+.picture {
+  width: 44px;
+  height: 44px;
+  background: #191920;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  flex: 1;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 500;
+  color: #C5C7CA;
+}
+
+.timestamp {
+  font-size: 14px;
+  font-weight: 500;
+  color: #7F8084;
+  margin-top: 4px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+}

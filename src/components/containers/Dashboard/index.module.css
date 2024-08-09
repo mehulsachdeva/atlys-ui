@@ -29,6 +29,10 @@
   color: #7F8084;
 }
 
-.postBlock {
+.post {
   margin-top: 40px;
+}
+
+.comments > div {
+  margin-top: 16px;
 }

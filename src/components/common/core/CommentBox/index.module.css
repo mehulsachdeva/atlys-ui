@@ -11,6 +11,17 @@
 	border-radius: 8px;
 }
 
+.highlighter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	background: #27292D;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
 .textarea {
 	width: 100%;
 	display: block;
@@ -20,11 +31,11 @@
 	background: transparent;
 	color: #FFFFFF;
 	line-height: var(--line-height);
-	margin-bottom: 10px;
+	margin-bottom: 12px;
 	overflow-y: auto;
 	border: 0px;
 	resize: none;
-	top: 10px;
+	top: 12px;
 	flex: 1;
 }
 
@@ -52,17 +63,10 @@
 	cursor: text;
 }
 
-.label {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 48px;
-	height: 48px;
-	background: #27292D;
-	border-radius: 50%;
-	flex-shrink: 0;
-}
-
-.input {
-	flex: 1;
+.uneditable {
+	color: #7F8084;
+	margin-bottom: 6px;
+	overflow-y: hidden;
+	max-height: none;
+	top: 6px;
 }

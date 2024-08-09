@@ -5,12 +5,13 @@ import { INPUT_DIMENSIONS } from "./constants"
 
 interface CommentBoxType {
 	comment?: string
+	highlighter?: string
 	readOnly?: boolean
 	onChange?: (comment: string) => void
 }
 
 const CommentBox = (props: CommentBoxType) => {
-	const { comment, readOnly = false, onChange } = props
+	const { comment, highlighter, readOnly = false, onChange } = props
 	const inputRef = useRef<any>(null)
 
 	useEffect(() => {
@@ -28,24 +29,26 @@ const CommentBox = (props: CommentBoxType) => {
 	}
 
 	return (
-		<div className={styles.container}>
-			<div className={styles.label}>T</div>
+		<div
+			style={
+				{
+					"--min-height": `${INPUT_DIMENSIONS.MIN_HEIGHT}px`,
+					"--max-height": `${INPUT_DIMENSIONS.MAX_HEIGHT}px`,
+					"--line-height": `${INPUT_DIMENSIONS.LINE_HEIGHT}px`,
+				} as CSSProperties
+			}
+			className={styles.container}
+		>
+			<div className={styles.highlighter}>{highlighter || "💬"}</div>
 			{!readOnly ? (
 				<div
-					style={
-						{
-							"--min-height": `${INPUT_DIMENSIONS.MIN_HEIGHT}px`,
-							"--max-height": `${INPUT_DIMENSIONS.MAX_HEIGHT}px`,
-							"--line-height": `${INPUT_DIMENSIONS.LINE_HEIGHT}px`,
-						} as CSSProperties
-					}
 					className={`${styles.textarea} ${styles.editable}`}
 					role="textbox"
 					onInput={handleChange}
 					contentEditable
 				/>
 			) : (
-				<div className={styles.textarea}>{comment}</div>
+				<div className={`${styles.textarea} ${styles.uneditable}`}>{comment}</div>
 			)}
 		</div>
 	)
