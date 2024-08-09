@@ -5,32 +5,56 @@ import Input from "components/common/shared/Input"
 import Button from "components/common/shared/Button"
 
 interface LoginCardType {
-	onSubmit: () => void
+	onSuccess?: () => void
 }
 
 const LoginCard = (props: LoginCardType) => {
-	const { onSubmit } = props
-	const [values, setValues] = useState({ username: "", password: "" })
+	const { onSuccess } = props
+	const [isLoginForm, setIsLoginForm] = useState(true)
+	const [values, setValues] = useState({ email: "", username: "", password: "" })
 
 	const handleChange = useCallback((key: string, value: string) => {
 		setValues((curr) => ({ ...curr, [key]: value }))
 	}, [])
 
+	const handleSubmitClick = useCallback(() => {
+		onSuccess?.()
+	}, [onSuccess])
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.subContainer}>
 				<div>
-					<div className={styles.header}>WELCOME BACK</div>
-					<div className={styles.subHeader}>Log into your account</div>
+					<div className={styles.header}>{isLoginForm ? "WELCOME BACK" : "SIGN UP"}</div>
+					<div className={styles.subHeader}>
+						{isLoginForm ? "Log into your account" : "Create an account to continue"}
+					</div>
 				</div>
 				<div>
+					{!isLoginForm ? (
+						<div className={styles.inputBox}>
+							<label className={styles.inputLabel}>Email</label>
+							<div className={styles.input}>
+								<Input
+									type="text"
+									value={values.email}
+									placeholder="Enter your email"
+									onChange={(e) => handleChange("email", e.target.value)}
+								/>
+							</div>
+						</div>
+					) : null}
 					<div className={styles.inputBox}>
-						<label className={styles.inputLabel}>Email or Username</label>
+						<label className={styles.inputLabel}>
+							{isLoginForm ? "Email or Username" : "Email"}
+						</label>
 						<div className={styles.input}>
 							<Input
 								type="text"
 								value={values.username}
-								placeholder="Enter your email or username"
+								placeholder={
+									isLoginForm ? "Enter your email or username" : "Choose a preferred username"
+								}
 								onChange={(e) => handleChange("username", e.target.value)}
 							/>
 						</div>
@@ -38,24 +62,30 @@ const LoginCard = (props: LoginCardType) => {
 					<div className={styles.inputBox}>
 						<div className={styles.passwordLabel}>
 							<label className={styles.inputLabel}>Password</label>
-							<div className={`${styles.inputLabel} ${styles.forgotPassword}`}>
-								Forgot password?
-							</div>
+							{isLoginForm ? (
+								<div className={`${styles.inputLabel} ${styles.forgotPassword}`}>
+									Forgot password?
+								</div>
+							) : null}
 						</div>
 						<div>
 							<PasswordInput
 								value={values.password}
+								placeholder={isLoginForm ? "Enter your password" : "Choose a strong password"}
 								onChange={(e) => handleChange("password", e.target.value)}
 							/>
 						</div>
 					</div>
 					<div className={styles.button}>
-						<Button width="100%" onClick={onSubmit}>
-							Login now
+						<Button width="100%" onClick={handleSubmitClick}>
+							{isLoginForm ? "Login now" : "Continue"}
 						</Button>
 					</div>
 					<div className={styles.switchSection}>
-						Not registered yet? <span>Register</span>
+						Not registered yet?{" "}
+						<span onClick={() => setIsLoginForm((curr) => !curr)}>
+							{isLoginForm ? "Register" : "Login"}
+						</span>
 					</div>
 				</div>
 			</div>

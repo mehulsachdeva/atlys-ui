@@ -14,7 +14,7 @@ const LoginModal = (props: LoginModalType) => {
 	return (
 		<Modal isOpen={isOpen} onClose={onClose} portal>
 			<div className={styles.container}>
-				<LoginCard onSubmit={() => {}} />
+				<LoginCard />
 			</div>
 		</Modal>
 	)
