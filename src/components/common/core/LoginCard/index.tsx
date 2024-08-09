@@ -82,7 +82,7 @@ const LoginCard = (props: LoginCardType) => {
 						</Button>
 					</div>
 					<div className={styles.switchSection}>
-						Not registered yet?{" "}
+						{isLoginForm ? "Not registered yet?" : "Already have an account?"}{" "}
 						<span onClick={() => setIsLoginForm((curr) => !curr)}>
 							{isLoginForm ? "Register" : "Login"}
 						</span>
