@@ -1,6 +1,7 @@
 import { memo } from "react"
 import styles from "./index.module.css"
 import CommentBox from "../CommentBox"
+import { formatCommentTimestamp } from "utils/comment"
 import { KebabMenu } from "components/common/icons/KebabMenu"
 import { ChatBubble } from "components/common/icons/ChatBubble"
 
@@ -21,6 +22,7 @@ interface CommentBlockType {
 
 const CommentBlock = (props: CommentBlockType) => {
 	const { data } = props
+	const timestamp = formatCommentTimestamp(data.created_at)
 
 	if (!data) return null
 	return (
@@ -30,7 +32,7 @@ const CommentBlock = (props: CommentBlockType) => {
 					<div className={styles.picture} />
 					<div>
 						<div className={styles.userName}>{data.created_by?.name}</div>
-						<div className={styles.timestamp}>5mins ago</div>
+						{timestamp ? <div className={styles.timestamp}>{timestamp}</div> : null}
 					</div>
 				</div>
 				<div className={styles.menu}>
