@@ -1,4 +1,11 @@
 .container {
+	width: 100%;
+	padding: 2px;
+	border-radius: 8px;
+	background-image: linear-gradient(120.59deg, #969696 0%, #343434 98.18%);
+}
+
+.subContainer {
 	display: flex;
 	flex-direction: column;
 	row-gap: 45px;
