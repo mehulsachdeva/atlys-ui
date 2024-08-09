@@ -2,6 +2,7 @@ import { memo } from "react"
 import styles from "./index.module.css"
 import CommentBox from "../CommentBox"
 import { KebabMenu } from "components/common/icons/KebabMenu"
+import { ChatBubble } from "components/common/icons/ChatBubble"
 
 type CommentType = {
 	id: number
@@ -36,7 +37,15 @@ const CommentBlock = (props: CommentBlockType) => {
 					<KebabMenu />
 				</div>
 			</div>
-			<CommentBox highlighter={data.highlighter} comment={data.comment} readOnly />
+			<div className={styles.comment}>
+				<CommentBox highlighter={data.highlighter} comment={data.comment} readOnly />
+			</div>
+			{!!data?.replies ? (
+				<div className={styles.replies}>
+					<ChatBubble />
+					<div>{data.replies} replies</div>
+				</div>
+			) : null}
 		</div>
 	)
 }

@@ -1,12 +1,9 @@
 .container {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   background: #27292D;
   border: 2px solid #35373B;
   border-radius: 8px;
   padding: 24px 20px;
-  row-gap: 16px;
 }
 
 .meta {
@@ -53,4 +50,18 @@
   height: 30px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.comment {
+  margin-top: 20px;
+}
+
+.replies {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7F8084;
+  margin-top: 14px;
 }
