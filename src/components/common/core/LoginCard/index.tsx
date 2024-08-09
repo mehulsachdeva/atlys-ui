@@ -54,7 +54,7 @@ const LoginCard = (props: LoginCardType) => {
 							Login now
 						</Button>
 					</div>
-					<div className={styles.registerInfo}>
+					<div className={styles.switchSection}>
 						Not registered yet? <span>Register</span>
 					</div>
 				</div>

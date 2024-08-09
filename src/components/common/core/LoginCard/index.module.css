@@ -62,14 +62,14 @@
 	margin-top: 20px;
 }
 
-.registerInfo {
+.switchSection {
 	font-size: 14px;
 	font-weight: 500;
 	color: #7f8084;
 	margin-top: 12px;
 }
 
-.registerInfo > span {
+.switchSection > span {
 	color: #c5c7ca;
 	cursor: pointer;
 }

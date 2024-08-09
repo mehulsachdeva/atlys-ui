@@ -7,7 +7,7 @@
   opacity: 0;
   background: transparent;
   backdrop-filter: unset;
-  transition: all var(--animation-speed) linear;
+  transition: all var(--animation-speed) ease;
   z-index: 999;
 }
 
