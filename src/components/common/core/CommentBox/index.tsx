@@ -10,7 +10,7 @@ interface CommentBoxType {
 }
 
 const CommentBox = (props: CommentBoxType) => {
-	const { comment, readOnly = true, onChange } = props
+	const { comment, readOnly = false, onChange } = props
 	const inputRef = useRef<any>(null)
 
 	useEffect(() => {
@@ -42,7 +42,7 @@ const CommentBox = (props: CommentBoxType) => {
 					className={styles.textarea}
 					role="textbox"
 					onInput={handleChange}
-					contentEditable={!!readOnly}
+					contentEditable
 				/>
 			) : (
 				<div className={styles.textarea}>{comment}</div>

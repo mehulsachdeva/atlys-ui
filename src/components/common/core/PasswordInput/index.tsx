@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from "react"
+import React, { memo, useState, useLayoutEffect } from "react"
 import styles from "./index.module.css"
 import Input from "components/common/shared/Input"
 import { Eye } from "components/common/icons/eye"
@@ -12,7 +12,7 @@ const PasswordInput = (props: PasswordInputType) => {
 	const [value, setValue] = useState(props.value || "")
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setValue(props.value || "")
 	}, [props.value])
 
