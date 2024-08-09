@@ -1,0 +1,5 @@
+export const INPUT_DIMENSIONS = {
+	MIN_HEIGHT: 2,
+	MAX_HEIGHT: 140,
+	LINE_HEIGHT: 24,
+}

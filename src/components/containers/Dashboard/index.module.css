@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  padding: 69px 20px 20px;
+  margin: 0 auto;
+}
+
+.container > div {
+  width: 100%;
+}
+
+.header {
+  max-width: 580px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.89px;
+  color: #C5C7CA;
+}
+
+.subTitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 12px;
+  color: #7F8084;
+}
+
+.post {
+  margin-top: 40px;
+}
+
+.comments > div {
+  margin-top: 16px;
+}

@@ -1,4 +1,4 @@
-import React from "react"
+import { useState, useCallback } from "react"
 import styles from "./index.module.css"
 import { Link } from "react-router-dom"
 import Input from "components/common/shared/Input"
@@ -6,6 +6,12 @@ import Button from "components/common/shared/Button"
 import PasswordInput from "components/common/core/PasswordInput"
 
 const Login = () => {
+	const [values, setValues] = useState({ username: "", password: "" })
+
+	const handleChange = useCallback((key: string, value: string) => {
+		setValues((curr) => ({ ...curr, [key]: value }))
+	}, [])
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.logo}>
@@ -21,7 +27,12 @@ const Login = () => {
 						<div className={styles.inputBox}>
 							<label className={styles.inputLabel}>Email or Username</label>
 							<div className={styles.input}>
-								<Input type="text" placeholder="Enter your email or username" />
+								<Input
+									type="text"
+									value={values.username}
+									placeholder="Enter your email or username"
+									onChange={(e) => handleChange("username", e.target.value)}
+								/>
 							</div>
 						</div>
 						<div className={styles.inputBox}>
@@ -32,7 +43,10 @@ const Login = () => {
 								</div>
 							</div>
 							<div>
-								<PasswordInput />
+								<PasswordInput
+									value={values.password}
+									onChange={(e) => handleChange("password", e.target.value)}
+								/>
 							</div>
 						</div>
 						<div className={styles.button}>

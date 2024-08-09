@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #27292D;
+  border: 2px solid #35373B;
+  border-radius: 8px;
+  padding: 24px 20px;
+  row-gap: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #C5C7CA;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,7 +1,7 @@
-import React, { memo, useState, useEffect } from "react"
+import React, { memo, useState, useLayoutEffect, useCallback } from "react"
 import styles from "./index.module.css"
 import Input from "components/common/shared/Input"
-import { Eye } from "components/common/icons/eye"
+import { Eye } from "components/common/icons/Eye"
 
 interface PasswordInputType {
 	value?: string
@@ -9,12 +9,21 @@ interface PasswordInputType {
 }
 
 const PasswordInput = (props: PasswordInputType) => {
+	const { onChange } = props
 	const [value, setValue] = useState(props.value || "")
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setValue(props.value || "")
 	}, [props.value])
+
+	const handleChange = useCallback(
+		(e: React.ChangeEvent<HTMLInputElement>) => {
+			onChange?.(e)
+			setValue(e.target.value)
+		},
+		[onChange],
+	)
 
 	return (
 		<div className={styles.container}>
@@ -24,7 +33,7 @@ const PasswordInput = (props: PasswordInputType) => {
 				value={value}
 				padding="12px 40px 12px 12px"
 				fontSize={value.length > 0 && !isPasswordVisible ? 21 : 16}
-				onChange={(e) => setValue(e.target.value)}
+				onChange={handleChange}
 			/>
 			<div className={styles.togglePassword} onClick={() => setIsPasswordVisible((curr) => !curr)}>
 				<Eye />
