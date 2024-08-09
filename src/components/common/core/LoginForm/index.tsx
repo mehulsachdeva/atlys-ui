@@ -1,11 +1,15 @@
 import { memo, useState, useCallback } from "react"
 import styles from "./index.module.css"
-import { Link } from "react-router-dom"
 import PasswordInput from "../PasswordInput"
 import Input from "components/common/shared/Input"
 import Button from "components/common/shared/Button"
 
-const LoginForm = () => {
+interface LoginFormType {
+	onSubmit: () => void
+}
+
+const LoginForm = (props: LoginFormType) => {
+	const { onSubmit } = props
 	const [values, setValues] = useState({ username: "", password: "" })
 
 	const handleChange = useCallback((key: string, value: string) => {
@@ -43,9 +47,9 @@ const LoginForm = () => {
 					</div>
 				</div>
 				<div className={styles.button}>
-					<Link to="/dashboard" relative="path">
-						<Button width="100%">Login now</Button>
-					</Link>
+					<Button width="100%" onClick={onSubmit}>
+						Login now
+					</Button>
 				</div>
 				<div className={styles.registerInfo}>
 					Not registered yet? <span>Register</span>
