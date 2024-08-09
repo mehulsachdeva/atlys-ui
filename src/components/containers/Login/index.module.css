@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subContainer {
+  width: 463px;
+  padding: 2px;
+  border-radius: 8px;
+  background-image: linear-gradient(129.59deg, #969696 0%, #343434 98.18%);
+}
+
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+  background: #27292D;
+  border-radius: 6px;
+  padding: 38px 22px;
+}
+
+.header {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B6C70;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.subHeader {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 21.78px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.inputBox {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.inputLabel {
+  color: #C5C7CA;
+}
+
+.inputBox:not(:first-child) {
+  margin-top: 16px;
+}
+
+.passwordLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgotPassword {
+  font-size: 12px;
+  cursor: pointer;
+}
