@@ -13,7 +13,7 @@ const PasswordInput = (props: PasswordInputType) => {
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
 	useEffect(() => {
-		setValue(props.value)
+		setValue(props.value || "")
 	}, [props.value])
 
 	return (
