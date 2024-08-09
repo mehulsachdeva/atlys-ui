@@ -7,7 +7,7 @@
   opacity: 0;
   background: transparent;
   backdrop-filter: unset;
-  transition: all var(--animation-speed) ease-in-out;
+  transition: all var(--animation-speed) linear;
   z-index: 999;
 }
 
@@ -23,4 +23,19 @@
   opacity: 1;
   background: #00000020;
   backdrop-filter: blur(1px);
+}
+
+.closeButton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: #131319;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
 }

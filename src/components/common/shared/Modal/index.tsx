@@ -1,6 +1,7 @@
 import { memo, useEffect, useState, useRef, CSSProperties } from "react"
 import styles from "./index.module.css"
 import Portal from "../Portal"
+import { Cross } from "components/common/icons/Cross"
 
 interface ModalType {
 	isOpen: boolean
@@ -11,7 +12,7 @@ interface ModalType {
 }
 
 const Modal = (props: ModalType) => {
-	const { isOpen, children, portal = false, animationSpeed = 150, onClose } = props
+	const { isOpen, children, portal = false, animationSpeed = 250, onClose } = props
 	const [open, setOpen] = useState(false)
 	const [close, setClose] = useState(true)
 	const timeout = useRef<NodeJS.Timeout | null>(null)
@@ -40,7 +41,12 @@ const Modal = (props: ModalType) => {
 			style={{ "--animation-speed": `${animationSpeed}ms` } as CSSProperties}
 			className={`${styles.container} ${open ? styles.visible : ""}`}
 		>
-			<div className={styles.modal}>{children}</div>
+			<div className={styles.modal}>
+				{children}
+				<div className={styles.closeButton} onClick={onClose}>
+					<Cross />
+				</div>
+			</div>
 		</div>
 	)
 
