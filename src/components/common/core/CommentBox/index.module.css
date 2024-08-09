@@ -1,0 +1,64 @@
+.container {
+	width: 100%;
+	min-height: 78px;
+	display: flex;
+	align-items: flex-start;
+	column-gap: 16px;
+	font-size: 16px;
+	color: #ffffff;
+	background: #191920;
+	padding: 15px 16px;
+	border-radius: 8px;
+}
+
+.textarea {
+	width: 100%;
+	display: block;
+	position: relative;
+	min-height: var(--min-height);
+	max-height: var(--max-height);
+	background: transparent;
+	color: #FFFFFF;
+	line-height: var(--line-height);
+	margin-bottom: 10px;
+	overflow-y: auto;
+	border: 0px;
+	resize: none;
+	top: 10px;
+	flex: 1;
+}
+
+.textarea div {
+	font-family: 'Inter', sans-serif !important;
+	background: transparent !important;
+	font-size: 16px !important;
+	color: #FFFFFF !important;
+	line-height: 24px !important;
+	white-space: unset !important;
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "How are you feeling today";
+  color: #7f8084;
+}
+
+.textarea:focus,
+.textarea:active {
+	outline: none;
+	box-shadow: none;
+}
+
+.label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	background: #27292D;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.input {
+	flex: 1;
+}

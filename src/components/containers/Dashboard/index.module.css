@@ -1,10 +1,13 @@
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
   width: 700px;
   padding: 69px 20px 20px;
   margin: 0 auto;
+}
+
+.container > div {
+  width: 100%;
 }
 
 .header {
@@ -24,4 +27,8 @@
   line-height: 24px;
   margin-top: 12px;
   color: #7F8084;
+}
+
+.postBlock {
+  margin-top: 40px;
 }

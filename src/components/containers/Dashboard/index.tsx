@@ -1,5 +1,5 @@
-import React from "react"
 import styles from "./index.module.css"
+import PostComment from "components/common/core/PostComment"
 
 const Dashboard = () => {
 	return (
@@ -9,6 +9,9 @@ const Dashboard = () => {
 				<div className={styles.subTitle}>
 					How are you doing today? Would you like to share something with the community 🤗
 				</div>
+			</div>
+			<div className={styles.postBlock}>
+				<PostComment onPost={() => {}} />
 			</div>
 		</div>
 	)
