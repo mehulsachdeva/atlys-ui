@@ -1,0 +1,20 @@
+.button {
+  width: var(--width);
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0px;
+  border-radius: 4px;
+  background: #4A96FF;
+  padding: 12px 24px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

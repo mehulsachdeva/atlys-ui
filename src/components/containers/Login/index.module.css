@@ -38,6 +38,9 @@
 }
 
 .inputBox {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   font-size: 14px;
   font-weight: 500;
 }
@@ -58,5 +61,21 @@
 
 .forgotPassword {
   font-size: 12px;
+  cursor: pointer;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+.registerInfo {
+  font-size: 14px;
+  font-weight: 500;
+  color: #7F8084;
+  margin-top: 12px;
+}
+
+.registerInfo > span {
+  color: #FFFFFF;
   cursor: pointer;
 }
