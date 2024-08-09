@@ -1,4 +1,4 @@
-import { memo } from "react"
+import React, { memo } from "react"
 import styles from "./index.module.css"
 import CommentBox from "../CommentBox"
 import { KebabMenu } from "components/common/icons/KebabMenu"
@@ -17,10 +17,11 @@ type CommentType = {
 
 interface CommentBlockType {
 	data: CommentType
+	onClick: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
 const CommentBlock = (props: CommentBlockType) => {
-	const { data } = props
+	const { data, onClick } = props
 	const timestamp = formatCommentTimestamp(data.created_at)
 	const isEdited =
 		isValidDate(new Date(data.created_at)) &&
@@ -29,7 +30,7 @@ const CommentBlock = (props: CommentBlockType) => {
 
 	if (!data) return null
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} onClick={onClick}>
 			<div className={styles.meta}>
 				<div className={styles.user}>
 					<div className={styles.picture} />

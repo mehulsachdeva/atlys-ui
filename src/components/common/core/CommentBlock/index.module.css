@@ -4,6 +4,7 @@
   border: 2px solid #35373B;
   border-radius: 8px;
   padding: 24px 20px;
+  cursor: pointer;
 }
 
 .meta {

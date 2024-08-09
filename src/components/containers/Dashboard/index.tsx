@@ -27,7 +27,7 @@ const Dashboard = () => {
 				</div>
 				<div className={styles.comments}>
 					{data.map((comment) => {
-						return <CommentBlock key={comment.id} data={comment} />
+						return <CommentBlock key={comment.id} data={comment} onClick={handleOpenLoginModal} />
 					})}
 				</div>
 			</div>
