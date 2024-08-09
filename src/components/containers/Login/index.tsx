@@ -3,10 +3,14 @@ import styles from './index.module.css';
 import { Link } from 'react-router-dom';
 import Input from 'components/common/shared/Input';
 import Button from 'components/common/shared/Button';
+import PasswordInput from 'components/common/core/PasswordInput';
 
 const Login = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.logo}>
+        <img className={styles.image} src='/images/logo.png' alt='logo' />
+      </div>
       <div className={styles.subContainer}>
         <div className={styles.authContainer}>
           <div>
@@ -24,6 +28,9 @@ const Login = () => {
               <div className={styles.passwordLabel}>
                 <label className={styles.inputLabel}>Password</label>
                 <div className={`${styles.inputLabel} ${styles.forgotPassword}`}>Forgot password?</div>
+              </div>
+              <div>
+                <PasswordInput />
               </div>
             </div>
             <div className={styles.button}>
