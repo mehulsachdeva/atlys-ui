@@ -21,4 +21,5 @@
 
 .card {
 	width: 463px;
+	max-width: 100%;
 }
