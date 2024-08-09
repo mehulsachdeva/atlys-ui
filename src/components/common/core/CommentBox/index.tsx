@@ -39,7 +39,7 @@ const CommentBox = (props: CommentBoxType) => {
 							"--line-height": `${INPUT_DIMENSIONS.LINE_HEIGHT}px`,
 						} as CSSProperties
 					}
-					className={styles.textarea}
+					className={`${styles.textarea} ${styles.editable}`}
 					role="textbox"
 					onInput={handleChange}
 					contentEditable

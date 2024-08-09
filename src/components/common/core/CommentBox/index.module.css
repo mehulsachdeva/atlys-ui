@@ -38,7 +38,7 @@
 }
 
 .textarea[contenteditable]:empty::before {
-  content: "How are you feeling today";
+  content: "How are you feeling today?";
   color: #7f8084;
 }
 
@@ -46,6 +46,10 @@
 .textarea:active {
 	outline: none;
 	box-shadow: none;
+}
+
+.editable {
+	cursor: text;
 }
 
 .label {
