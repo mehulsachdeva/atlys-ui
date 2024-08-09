@@ -1,19 +1,18 @@
 import { memo } from "react"
 import styles from "./index.module.css"
 import CommentBox from "../CommentBox"
-import { formatCommentTimestamp } from "utils/comment"
 import { KebabMenu } from "components/common/icons/KebabMenu"
 import { ChatBubble } from "components/common/icons/ChatBubble"
+import { isValidDate, formatCommentTimestamp } from "utils/comment"
 
 type CommentType = {
 	id: number
 	created_by: { name: string; picture?: string }
 	created_at: string
-	updated_at?: string
+	updated_at: string
 	highlighter?: string
 	comment: string
 	replies?: number
-	edited: boolean
 }
 
 interface CommentBlockType {
@@ -23,6 +22,10 @@ interface CommentBlockType {
 const CommentBlock = (props: CommentBlockType) => {
 	const { data } = props
 	const timestamp = formatCommentTimestamp(data.created_at)
+	const isEdited =
+		isValidDate(new Date(data.created_at)) &&
+		isValidDate(new Date(data.updated_at)) &&
+		data.created_at !== data.updated_at
 
 	if (!data) return null
 	return (
@@ -32,7 +35,12 @@ const CommentBlock = (props: CommentBlockType) => {
 					<div className={styles.picture} />
 					<div>
 						<div className={styles.userName}>{data.created_by?.name}</div>
-						{timestamp ? <div className={styles.timestamp}>{timestamp}</div> : null}
+						{timestamp ? (
+							<div className={styles.timestamp}>
+								<span>{timestamp}</span>
+								{isEdited ? <span className={styles.editedLabel}>Edited</span> : null}
+							</div>
+						) : null}
 					</div>
 				</div>
 				<div className={styles.menu}>
@@ -45,7 +53,9 @@ const CommentBlock = (props: CommentBlockType) => {
 			{!!data?.replies ? (
 				<div className={styles.replies}>
 					<ChatBubble />
-					<div>{data.replies} replies</div>
+					<div>
+						{data.replies} comment{data.replies > 1 ? "s" : ""}
+					</div>
 				</div>
 			) : null}
 		</div>

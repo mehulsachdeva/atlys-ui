@@ -55,6 +55,6 @@ const formatDate = (date: string) => {
 	}
 }
 
-const isValidDate = (date: Date) => {
+export const isValidDate = (date: Date) => {
 	return date instanceof Date && !isNaN(date.getTime())
 }
