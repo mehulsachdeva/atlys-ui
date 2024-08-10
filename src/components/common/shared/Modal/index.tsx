@@ -1,18 +1,16 @@
 import { memo, useEffect, useState, useRef, CSSProperties } from "react"
 import styles from "./index.module.css"
-import Portal from "../Portal"
 import { Cross } from "components/common/icons/Cross"
 
 interface ModalType {
 	isOpen: boolean
 	children: React.ReactNode
-	portal?: boolean
 	animationSpeed?: number // To be in milliseconds
 	onClose: () => void
 }
 
 const Modal = (props: ModalType) => {
-	const { isOpen, children, portal = false, animationSpeed = 200, onClose } = props
+	const { isOpen, children, animationSpeed = 200, onClose } = props
 	const [open, setOpen] = useState(false)
 	const [close, setClose] = useState(true)
 	const timeout = useRef<NodeJS.Timeout | null>(null)
@@ -51,8 +49,7 @@ const Modal = (props: ModalType) => {
 	)
 
 	if (close) return null
-	if (!portal) return component
-	return <Portal>{component}</Portal>
+	return component
 }
 
 export default memo(Modal)

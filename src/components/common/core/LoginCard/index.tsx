@@ -55,7 +55,7 @@ const LoginCard = (props: LoginCardType) => {
 					) : null}
 					<div className={styles.inputBox}>
 						<label className={styles.inputLabel}>
-							{isLoginForm ? "Email or Username" : "Email"}
+							{isLoginForm ? "Email or Username" : "Username"}
 						</label>
 						<div className={styles.input}>
 							<Input
