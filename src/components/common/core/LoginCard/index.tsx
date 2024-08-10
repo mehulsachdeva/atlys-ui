@@ -5,13 +5,16 @@ import Input from "components/common/shared/Input"
 import Button from "components/common/shared/Button"
 import { ArrowRight } from "components/common/icons/ArrowRight"
 
+export type DefaultFormType = "login" | "register"
+
 interface LoginCardType {
+	defaultForm?: DefaultFormType
 	onSuccess?: () => void
 }
 
 const LoginCard = (props: LoginCardType) => {
-	const { onSuccess } = props
-	const [isLoginForm, setIsLoginForm] = useState(true)
+	const { defaultForm = "login", onSuccess } = props
+	const [isLoginForm, setIsLoginForm] = useState(defaultForm === "login")
 	const [values, setValues] = useState({ email: "", username: "", password: "" })
 
 	const handleChange = useCallback((key: string, value: string) => {
