@@ -18,13 +18,13 @@ export const formatDate = (date: string) => {
 		if (!isValidDate(d)) throw new Error("Invalid Date")
 		let day = String(d.getUTCDate())
 		let month = months[d.getUTCMonth()]
-		let year = String(d.getUTCFullYear().toString().slice(-2))
+		let year = String(d.getUTCFullYear().toString())
 		let hours = String(d.getUTCHours())
 		let minutes = String(d.getUTCMinutes())
 		if (+day < 10) day = "0" + day
 		if (+hours < 10) hours = "0" + hours
 		if (+minutes < 10) minutes = "0" + minutes
-		return `${day} ${month}, ${year} ${hours}:${minutes}`
+		return `${month}, ${day} ${year} ${hours}:${minutes}`
 	} catch (err) {
 		return null
 	}
