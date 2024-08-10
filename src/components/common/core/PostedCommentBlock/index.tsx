@@ -12,7 +12,7 @@ type CommentType = {
 	created_by: number // Created by user id
 	created_by_user: { name: string; picture?: string } // Created by user details
 	created_at: string
-	updated_at: string
+	updated_at?: string
 	highlighter?: string
 	comment: string
 	replies?: number
@@ -26,10 +26,10 @@ interface PostedCommentBlockType {
 const PostedCommentBlock = (props: PostedCommentBlockType) => {
 	const { data, onClick } = props
 	const userDetails = data.created_by_user || {}
-	const timestamp = formatCommentTimestamp(data.created_at)
+	const timestamp = formatCommentTimestamp(data.updated_at || data.created_at)
 	const isEdited =
 		isValidDate(new Date(data.created_at)) &&
-		isValidDate(new Date(data.updated_at)) &&
+		isValidDate(new Date(data.updated_at || "")) &&
 		data.created_at !== data.updated_at
 
 	if (!data) return null

@@ -8,7 +8,7 @@ const Login = () => {
 
 	const handleSubmit = useCallback(() => {
 		navigate("/dashboard")
-	}, [navigate])
+	}, [])
 
 	return (
 		<div className={styles.container}>
