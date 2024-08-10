@@ -1,12 +1,16 @@
+import { convertToPixels } from "utils"
+
 type CrossType = {
+	width?: string | number
+	height?: string | number
 	fill?: string
 }
 
 const Cross = (props: CrossType) => {
-	const { fill = "#FFFFFF" } = props
+	const { width = "1em", height = "1em", fill = "currentColor" } = props
 
 	return (
-		<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+		<svg width={convertToPixels(width)} height={convertToPixels(height)} viewBox="0 0 16 16">
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"

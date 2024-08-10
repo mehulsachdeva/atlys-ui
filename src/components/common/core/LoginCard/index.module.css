@@ -62,19 +62,22 @@
 	margin-top: 20px;
 }
 
-.switchSection {
+.switchWrapper {
 	font-size: 14px;
 	font-weight: 500;
 	color: #7f8084;
 	margin-top: 12px;
 }
 
-.switchSection > span {
+.switch {
+	display: inline-flex;
+	align-items: center;
+	column-gap: 2px;
 	color: #c5c7ca;
 	cursor: pointer;
 }
 
-.arrowIcon {
-	margin-left: 2px;
-	vertical-align: middle;
+.switch > svg {
+	position: relative;
+	top: 1px;
 }

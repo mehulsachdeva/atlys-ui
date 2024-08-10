@@ -87,13 +87,11 @@ const LoginCard = (props: LoginCardType) => {
 							{isLoginForm ? "Login now" : "Continue"}
 						</Button>
 					</div>
-					<div className={styles.switchSection}>
+					<div className={styles.switchWrapper}>
 						{isLoginForm ? "Not registered yet?" : "Already have an account?"}{" "}
-						<span onClick={() => setIsLoginForm((curr) => !curr)}>
+						<span className={styles.switch} onClick={() => setIsLoginForm((curr) => !curr)}>
 							{isLoginForm ? "Register" : "Login"}
-							<span className={styles.arrowIcon}>
-								<ArrowRight />
-							</span>
+							<ArrowRight width="1.1em" height="1.1em" />
 						</span>
 					</div>
 				</div>

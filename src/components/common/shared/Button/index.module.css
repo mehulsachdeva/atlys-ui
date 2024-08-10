@@ -12,6 +12,7 @@
 	padding: 12px 24px;
 	color: #ffffff;
 	cursor: pointer;
+	user-select: none;
 }
 
 .disabled {

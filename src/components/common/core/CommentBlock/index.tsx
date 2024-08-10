@@ -54,7 +54,7 @@ const CommentBlock = (props: CommentBlockType) => {
 			</div>
 			{!!data?.replies ? (
 				<div className={styles.replies}>
-					<ChatBubble />
+					<ChatBubble width={20} height={20} fill="#C5C7CA" />
 					<div>
 						{data.replies} comment{data.replies > 1 ? "s" : ""}
 					</div>

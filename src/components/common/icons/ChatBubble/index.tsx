@@ -1,12 +1,21 @@
+import { convertToPixels } from "utils"
+
 type ChatBubbleType = {
+	width?: string | number
+	height?: string | number
 	fill?: string
 }
 
 const ChatBubble = (props: ChatBubbleType) => {
-	const { fill = "#C5C7CA" } = props
+	const { width = "1em", height = "1em", fill = "currentColor" } = props
 
 	return (
-		<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+		<svg
+			width={convertToPixels(width)}
+			height={convertToPixels(height)}
+			viewBox="0 0 20 20"
+			fill="none"
+		>
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"

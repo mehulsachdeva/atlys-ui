@@ -37,7 +37,7 @@ const PasswordInput = (props: PasswordInputType) => {
 				onChange={handleChange}
 			/>
 			<div className={styles.togglePassword} onClick={() => setIsPasswordVisible((curr) => !curr)}>
-				<Eye />
+				<Eye width={20} height={16} />
 				{isPasswordVisible ? <div className={styles.slash} /> : null}
 			</div>
 		</div>
