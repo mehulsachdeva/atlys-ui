@@ -34,7 +34,11 @@ const Dashboard = () => {
 				</div>
 			</div>
 			<Suspense>
-				<LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
+				<LoginModal
+					isOpen={isLoginModalOpen}
+					onClose={() => setIsLoginModalOpen(false)}
+					defaultForm="register"
+				/>
 			</Suspense>
 		</>
 	)

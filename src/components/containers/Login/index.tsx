@@ -13,7 +13,7 @@ const Login = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.logo}>
-				<img className={styles.image} src="/images/logo.png" alt="logo" />
+				<img className={styles.image} src="/logo.png" alt="logo" />
 			</div>
 			<div className={styles.card}>
 				<LoginCard onSuccess={handleSubmit} />
