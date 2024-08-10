@@ -9,9 +9,4 @@ export const users = [
 		email: "patrick@example.com",
 		password: "patrick123",
 	},
-	{
-		username: "Richard",
-		email: "richard@example.com",
-		password: "richard123",
-	},
 ]

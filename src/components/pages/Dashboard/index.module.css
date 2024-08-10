@@ -37,3 +37,19 @@
 .comments > div {
   margin-top: 16px;
 }
+
+.logout {
+  position: fixed;
+  width: max-content !important;
+  top: 20px;
+  right: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #C5C7CA;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.logout:hover {
+  color: #FFFFFF;
+}

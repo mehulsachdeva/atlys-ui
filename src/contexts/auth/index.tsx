@@ -65,10 +65,10 @@ const AuthContextProvider = (props: AuthContextType) => {
 	}
 
 	/* Invalidate the user and redirect accordingly */
-	const logout = () => {
+	const logout = (redirectToLogin = false) => {
 		localStorage.removeItem("logged_user")
 		setUser({ logged: false })
-		navigate("/")
+		redirectToLogin && navigate("/")
 	}
 
 	/* Here username can be email as well */

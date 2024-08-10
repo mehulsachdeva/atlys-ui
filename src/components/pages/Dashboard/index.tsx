@@ -9,7 +9,7 @@ const LoginModal = lazy(() => import("components/common/core/LoginModal"))
 
 const Dashboard = () => {
 	const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
-	const { user } = useContext<any>(AuthContext)
+	const { user, logout } = useContext<any>(AuthContext)
 
 	const handleOpenLoginModal = useCallback(() => {
 		if (user.logged) return
@@ -35,6 +35,11 @@ const Dashboard = () => {
 						)
 					})}
 				</div>
+				{user.logged ? (
+					<div className={styles.logout} onClick={() => logout()}>
+						Logout
+					</div>
+				) : null}
 			</div>
 			<Suspense>
 				<LoginModal
