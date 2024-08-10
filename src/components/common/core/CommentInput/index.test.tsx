@@ -2,7 +2,7 @@ import "@testing-library/jest-dom"
 import { render, screen } from "@testing-library/react"
 import CommentInput from "."
 
-describe("Comment Input Component", () => {
+describe("Comment Input", () => {
 	const props = {
 		readOnly: false,
 		onChange: jest.fn(),

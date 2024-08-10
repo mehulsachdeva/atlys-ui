@@ -2,7 +2,7 @@ import "@testing-library/jest-dom"
 import { render, screen, fireEvent } from "@testing-library/react"
 import LoginCard from "."
 
-describe("Login Card Component", () => {
+describe("Login Card", () => {
 	const props = {
 		onSuccess: jest.fn(),
 	}
