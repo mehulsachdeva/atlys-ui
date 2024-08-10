@@ -6,7 +6,7 @@ const ChatBubble = (props: ChatBubbleType) => {
 	const { fill = "#C5C7CA" } = props
 
 	return (
-		<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
+		<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"
