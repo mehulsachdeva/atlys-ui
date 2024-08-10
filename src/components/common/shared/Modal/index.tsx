@@ -12,7 +12,7 @@ interface ModalType {
 }
 
 const Modal = (props: ModalType) => {
-	const { isOpen, children, portal = false, animationSpeed = 250, onClose } = props
+	const { isOpen, children, portal = false, animationSpeed = 200, onClose } = props
 	const [open, setOpen] = useState(false)
 	const [close, setClose] = useState(true)
 	const timeout = useRef<NodeJS.Timeout | null>(null)

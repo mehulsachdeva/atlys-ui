@@ -74,15 +74,13 @@ const LoginCard = (props: LoginCardType) => {
 								</div>
 							) : null}
 						</div>
-						<div>
-							<PasswordInput
-								value={values.password}
-								placeholder={isLoginForm ? "Enter your password" : "Choose a strong password"}
-								onChange={(e) => handleChange("password", e.target.value)}
-							/>
-						</div>
+						<PasswordInput
+							value={values.password}
+							placeholder={isLoginForm ? "Enter your password" : "Choose a strong password"}
+							onChange={(e) => handleChange("password", e.target.value)}
+						/>
 					</div>
-					<div className={styles.button}>
+					<div className={styles.buttonWrapper}>
 						<Button width="100%" onClick={handleSubmitClick}>
 							{isLoginForm ? "Login now" : "Continue"}
 						</Button>

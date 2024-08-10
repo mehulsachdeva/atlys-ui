@@ -15,7 +15,7 @@
   color: #C5C7CA;
 }
 
-.button {
+.buttonWrapper {
   display: flex;
   justify-content: flex-end;
 }

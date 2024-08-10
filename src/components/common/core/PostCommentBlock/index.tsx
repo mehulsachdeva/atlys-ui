@@ -14,10 +14,8 @@ const PostCommentBlock = (props: PostCommentBlockType) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>Create Post</div>
-			<div>
-				<CommentInput comment={comment} onChange={setComment} />
-			</div>
-			<div className={styles.button}>
+			<CommentInput comment={comment} onChange={setComment} />
+			<div className={styles.buttonWrapper}>
 				<Button width={111} onClick={onPost}>
 					Post
 				</Button>
