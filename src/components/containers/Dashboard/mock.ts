@@ -1,4 +1,4 @@
-export const data = [
+export const comments = [
 	{
 		id: 1,
 		created_by: 100,
