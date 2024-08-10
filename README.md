@@ -32,14 +32,14 @@
 For testing purposes, the following mock user credentials are predefined:
 
 - **User 1:**
-  - **Username**: Jane
-  - **Email**: jane@example.com
-  - **Password**: jane123
+  - **Username**: `Jane`
+  - **Email**: `jane@example.com`
+  - **Password**: `jane123`
 
 - **User 2:**
-  - **Username**: Patrick
-  - **Email**: patrick@example.com
-  - **Password**: patrick123
+  - **Username**: `Patrick`
+  - **Email**: `patrick@example.com`
+  - **Password**: `patrick123`
 
 ## Getting Started
 
