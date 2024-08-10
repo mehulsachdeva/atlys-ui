@@ -2,7 +2,7 @@ import { lazy, Suspense, useState, useCallback } from "react"
 import styles from "./index.module.css"
 import PostCommentBlock from "components/common/core/PostCommentBlock"
 import PostedCommentBlock from "components/common/core/PostedCommentBlock"
-import { comments } from "./mock"
+import { user, comments } from "./mock"
 
 const LoginModal = lazy(() => import("components/common/core/LoginModal"))
 
@@ -17,7 +17,7 @@ const Dashboard = () => {
 		<>
 			<div className={styles.container}>
 				<div className={styles.header}>
-					<div className={styles.title}>Hello Jane</div>
+					<div className={styles.title}>Hello {user.name}</div>
 					<div className={styles.subTitle}>
 						How are you doing today? Would you like to share something with the community 🤗
 					</div>
