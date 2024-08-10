@@ -18,6 +18,8 @@ const LoginCard = (props: LoginCardType) => {
 	const [isLoginForm, setIsLoginForm] = useState(defaultForm === "login")
 	const [values, setValues] = useState({ email: "", username: "", password: "" })
 	const { login, register } = useContext<any>(AuthContext)
+	const isSubmitDisabled =
+		!values.password || !values.username.trim() || (!isLoginForm && !values.email.trim())
 
 	const handleChange = useCallback((key: string, value: string) => {
 		setValues((curr) => ({ ...curr, [key]: value }))
@@ -50,7 +52,7 @@ const LoginCard = (props: LoginCardType) => {
 									type="text"
 									value={values.email}
 									placeholder="Enter your email"
-									onChange={(e) => handleChange("email", e.target.value)}
+									onChange={(e) => handleChange("email", e.target.value.trim())}
 								/>
 							</div>
 						</div>
@@ -66,7 +68,7 @@ const LoginCard = (props: LoginCardType) => {
 								placeholder={
 									isLoginForm ? "Enter your email or username" : "Choose a preferred username"
 								}
-								onChange={(e) => handleChange("username", e.target.value)}
+								onChange={(e) => handleChange("username", e.target.value.trim())}
 							/>
 						</div>
 					</div>
@@ -86,7 +88,7 @@ const LoginCard = (props: LoginCardType) => {
 						/>
 					</div>
 					<div className={styles.buttonWrapper}>
-						<Button width="100%" onClick={handleSubmitClick}>
+						<Button width="100%" disabled={isSubmitDisabled} onClick={handleSubmitClick}>
 							{isLoginForm ? "Login now" : "Continue"}
 						</Button>
 					</div>
