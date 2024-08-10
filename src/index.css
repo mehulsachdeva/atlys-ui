@@ -19,6 +19,10 @@ body {
 	color: #ffffff;
 }
 
+body, input {
+	letter-spacing: 0.15px;
+}
+
 #root > div {
 	min-height: 100vh;
 }
