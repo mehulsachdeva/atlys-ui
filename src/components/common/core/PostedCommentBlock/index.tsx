@@ -10,7 +10,7 @@ import { formatCommentTimestamp } from "utils/comment"
 type CommentType = {
 	id: number
 	created_by: number // Created by user id
-	created_by_user: { name: string; picture?: string } // Created by user details
+	created_by_user: { username: string; picture?: string } // Created by user details
 	created_at: string
 	updated_at?: string
 	highlighter?: string
@@ -37,9 +37,9 @@ const PostedCommentBlock = (props: PostedCommentBlockType) => {
 		<div className={styles.container} onClick={onClick}>
 			<div className={styles.meta}>
 				<div className={styles.user}>
-					<UserAvatar name={userDetails.name} picture={userDetails.picture} />
+					<UserAvatar name={userDetails.username} picture={userDetails.picture} />
 					<div>
-						<div className={styles.userName}>{userDetails.name}</div>
+						<div className={styles.userName}>{userDetails.username}</div>
 						{timestamp ? (
 							<div className={styles.timestamp}>
 								<span>{timestamp}</span>
