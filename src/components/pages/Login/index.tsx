@@ -1,5 +1,6 @@
 import styles from "./index.module.css"
 import LoginCard from "components/common/core/LoginCard"
+import LoggedAutoRedirection from "hoc/LoggedAutoRedirection"
 
 const Login = () => {
 	return (
@@ -14,4 +15,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default LoggedAutoRedirection(Login)
