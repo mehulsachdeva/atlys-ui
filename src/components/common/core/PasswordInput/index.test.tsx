@@ -10,19 +10,19 @@ describe("Password Input", () => {
 
 	test("is rendered", () => {
 		render(<PasswordInput {...props} />)
-		expect(screen.getByPlaceholderText(/Test placeholder/i)).toBeInTheDocument()
+		expect(screen.getByPlaceholderText(props.placeholder)).toBeInTheDocument()
 	})
 
 	test("on change is called", () => {
 		render(<PasswordInput {...props} />)
-		const inputElement = screen.getByPlaceholderText(/Test placeholder/i)
+		const inputElement = screen.getByPlaceholderText(props.placeholder)
 		fireEvent.change(inputElement, { target: { value: "New Value" } })
 		expect(props.onChange).toHaveBeenCalled()
 	})
 
 	test("is password visible on toggle click", () => {
 		render(<PasswordInput {...props} />)
-		const inputElement = screen.getByPlaceholderText(/Test placeholder/i)
+		const inputElement = screen.getByPlaceholderText(props.placeholder)
 		const toggleElement = document.querySelector(".togglePassword")
 		expect(inputElement).toHaveAttribute("type", "password")
 		toggleElement && fireEvent.click(toggleElement)
