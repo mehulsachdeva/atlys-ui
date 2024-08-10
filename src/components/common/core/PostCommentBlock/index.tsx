@@ -1,23 +1,21 @@
 import React, { memo, useState } from "react"
 import styles from "./index.module.css"
-import CommentBox from "../CommentBox"
+import CommentInput from "../CommentInput"
 import Button from "components/common/shared/Button"
 
-interface PostCommentType {
+interface PostCommentBlockType {
 	onPost: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const PostComment = (props: PostCommentType) => {
+const PostCommentBlock = (props: PostCommentBlockType) => {
 	const { onPost } = props
 	const [comment, setComment] = useState("")
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>Create Post</div>
-			<div>
-				<CommentBox comment={comment} onChange={setComment} />
-			</div>
-			<div className={styles.button}>
+			<CommentInput comment={comment} onChange={setComment} />
+			<div className={styles.buttonWrapper}>
 				<Button width={111} onClick={onPost}>
 					Post
 				</Button>
@@ -26,4 +24,4 @@ const PostComment = (props: PostCommentType) => {
 	)
 }
 
-export default memo(PostComment)
+export default memo(PostCommentBlock)

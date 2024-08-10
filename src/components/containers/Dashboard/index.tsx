@@ -1,7 +1,7 @@
 import { lazy, Suspense, useState, useCallback } from "react"
 import styles from "./index.module.css"
-import PostComment from "components/common/core/PostComment"
-import CommentBlock from "components/common/core/CommentBlock"
+import PostCommentBlock from "components/common/core/PostCommentBlock"
+import PostedCommentBlock from "components/common/core/PostedCommentBlock"
 import { data } from "./mock"
 
 const LoginModal = lazy(() => import("components/common/core/LoginModal"))
@@ -23,11 +23,13 @@ const Dashboard = () => {
 					</div>
 				</div>
 				<div className={styles.post}>
-					<PostComment onPost={handleOpenLoginModal} />
+					<PostCommentBlock onPost={handleOpenLoginModal} />
 				</div>
 				<div className={styles.comments}>
 					{data.map((comment) => {
-						return <CommentBlock key={comment.id} data={comment} onClick={handleOpenLoginModal} />
+						return (
+							<PostedCommentBlock key={comment.id} data={comment} onClick={handleOpenLoginModal} />
+						)
 					})}
 				</div>
 			</div>

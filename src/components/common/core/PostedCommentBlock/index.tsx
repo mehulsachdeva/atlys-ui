@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import styles from "./index.module.css"
 import UserAvatar from "../UserAvatar"
-import CommentBox from "../CommentBox"
+import CommentInput from "../CommentInput"
 import { KebabMenu } from "components/common/icons/KebabMenu"
 import { ChatBubble } from "components/common/icons/ChatBubble"
 import { isValidDate } from "utils/date"
@@ -18,12 +18,12 @@ type CommentType = {
 	replies?: number
 }
 
-interface CommentBlockType {
+interface PostedCommentBlockType {
 	data: CommentType
 	onClick: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
-const CommentBlock = (props: CommentBlockType) => {
+const PostedCommentBlock = (props: PostedCommentBlockType) => {
 	const { data, onClick } = props
 	const userDetails = data.created_by_user || {}
 	const timestamp = formatCommentTimestamp(data.created_at)
@@ -53,7 +53,7 @@ const CommentBlock = (props: CommentBlockType) => {
 				</div>
 			</div>
 			<div className={styles.comment}>
-				<CommentBox highlighter={data.highlighter} comment={data.comment} readOnly />
+				<CommentInput highlighter={data.highlighter} comment={data.comment} readOnly />
 			</div>
 			{!!data.replies ? (
 				<div className={styles.replies}>
@@ -67,4 +67,4 @@ const CommentBlock = (props: CommentBlockType) => {
 	)
 }
 
-export default memo(CommentBlock)
+export default memo(PostedCommentBlock)
