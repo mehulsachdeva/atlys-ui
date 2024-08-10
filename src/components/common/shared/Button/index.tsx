@@ -1,5 +1,6 @@
 import React, { memo, CSSProperties } from "react"
 import styles from "./index.module.css"
+import { convertToPixels } from "utils"
 
 interface ButtonType {
 	width?: string | number
@@ -13,7 +14,7 @@ const Button = (props: ButtonType) => {
 
 	return (
 		<button
-			style={{ "--width": typeof width === "number" ? `${width}px` : width } as CSSProperties}
+			style={{ "--width": convertToPixels(width) } as CSSProperties}
 			className={`${styles.button} ${disabled ? styles.disabled : ""}`}
 			disabled={disabled}
 			onClick={onClick}

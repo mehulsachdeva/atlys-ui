@@ -1,4 +1,4 @@
-interface KebabMenuType {
+type KebabMenuType = {
 	fill?: string
 }
 

@@ -1,0 +1,83 @@
+.container {
+	width: 100%;
+	padding: 2px;
+	border-radius: 8px;
+	background: linear-gradient(120.59deg, #969696 0%, #343434 98.18%);
+}
+
+.subContainer {
+	display: flex;
+	flex-direction: column;
+	row-gap: 45px;
+	background: #27292d;
+	border-radius: 6px;
+	padding: 38px 22px;
+}
+
+.header {
+	font-size: 14px;
+	font-weight: 500;
+	color: #6b6c70;
+	letter-spacing: 0.03em;
+	text-align: center;
+}
+
+.subHeader {
+	font-size: 18px;
+	font-weight: 600;
+	color: #ffffff;
+	line-height: 21.78px;
+	text-align: center;
+	margin-top: 8px;
+}
+
+.inputBox {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.inputLabel {
+	color: #c5c7ca;
+}
+
+.inputBox:not(:first-child) {
+	margin-top: 16px;
+}
+
+.passwordLabel {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.forgotPassword {
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.button {
+	margin-top: 20px;
+}
+
+.switchWrapper {
+	font-size: 14px;
+	font-weight: 500;
+	color: #7f8084;
+	margin-top: 12px;
+}
+
+.switch {
+	display: inline-flex;
+	align-items: center;
+	column-gap: 2px;
+	color: #c5c7ca;
+	cursor: pointer;
+}
+
+.switch > svg {
+	position: relative;
+	top: 1px;
+}

@@ -4,6 +4,7 @@
   border: 2px solid #35373B;
   border-radius: 8px;
   padding: 24px 20px;
+  cursor: pointer;
 }
 
 .meta {
@@ -11,15 +12,6 @@
   align-items: center;
   justify-content: space-between;
   column-gap: 30px;
-}
-
-.picture {
-  width: 44px;
-  height: 44px;
-  background: #191920;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
 }
 
 .user {

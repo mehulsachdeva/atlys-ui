@@ -1,5 +1,6 @@
 import React, { memo, CSSProperties } from "react"
 import styles from "./index.module.css"
+import { convertToPixels } from "utils"
 
 interface InputType {
 	type: "text" | "email" | "password"
@@ -17,8 +18,8 @@ const Input = (props: InputType) => {
 		<input
 			style={
 				{
-					"--padding": typeof padding === "number" ? `${padding}px` : padding,
-					"--font-size": typeof fontSize === "number" ? `${fontSize}px` : fontSize,
+					"--padding": convertToPixels(padding),
+					"--font-size": convertToPixels(fontSize),
 				} as CSSProperties
 			}
 			className={styles.input}
