@@ -12,8 +12,9 @@ const Dashboard = () => {
 	const { user } = useContext<any>(AuthContext)
 
 	const handleOpenLoginModal = useCallback(() => {
+		if (user.logged) return
 		setIsLoginModalOpen(true)
-	}, [])
+	}, [user])
 
 	return (
 		<>
