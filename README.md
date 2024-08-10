@@ -13,7 +13,7 @@
 ## Getting Started
 
 To get started with Atlys UI, first clone the repository using:
-### `git clone <repository-url>`
+### `git clone https://github.com/mehulsachdeva/atlys-ui.git`
 
 Once cloned, navigate to the project directory:
 ### `cd atlys-ui`
