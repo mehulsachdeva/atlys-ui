@@ -2,7 +2,7 @@
 	width: 100%;
 	padding: 2px;
 	border-radius: 8px;
-	background-image: linear-gradient(120.59deg, #969696 0%, #343434 98.18%);
+	background: linear-gradient(120.59deg, #969696 0%, #343434 98.18%);
 }
 
 .subContainer {
@@ -72,4 +72,9 @@
 .switchSection > span {
 	color: #c5c7ca;
 	cursor: pointer;
+}
+
+.arrowIcon {
+	margin-left: 2px;
+	vertical-align: middle;
 }

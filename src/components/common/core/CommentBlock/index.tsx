@@ -3,7 +3,8 @@ import styles from "./index.module.css"
 import CommentBox from "../CommentBox"
 import { KebabMenu } from "components/common/icons/KebabMenu"
 import { ChatBubble } from "components/common/icons/ChatBubble"
-import { isValidDate, formatCommentTimestamp } from "utils/comment"
+import { isValidDate } from "utils/date"
+import { formatCommentTimestamp } from "utils/comment"
 
 type CommentType = {
 	id: number

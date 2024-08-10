@@ -3,6 +3,7 @@ import styles from "./index.module.css"
 import PasswordInput from "../PasswordInput"
 import Input from "components/common/shared/Input"
 import Button from "components/common/shared/Button"
+import { ArrowRight } from "components/common/icons/ArrowRight"
 
 interface LoginCardType {
 	onSuccess?: () => void
@@ -90,6 +91,9 @@ const LoginCard = (props: LoginCardType) => {
 						{isLoginForm ? "Not registered yet?" : "Already have an account?"}{" "}
 						<span onClick={() => setIsLoginForm((curr) => !curr)}>
 							{isLoginForm ? "Register" : "Login"}
+							<span className={styles.arrowIcon}>
+								<ArrowRight />
+							</span>
 						</span>
 					</div>
 				</div>

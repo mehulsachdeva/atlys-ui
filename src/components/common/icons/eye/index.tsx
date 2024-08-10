@@ -1,4 +1,4 @@
-interface EyeType {
+type EyeType = {
 	fill?: string
 }
 

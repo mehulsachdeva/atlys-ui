@@ -1,4 +1,4 @@
-interface CrossType {
+type CrossType = {
 	fill?: string
 }
 
