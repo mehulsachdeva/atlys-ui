@@ -1,5 +1,6 @@
 import React, { memo } from "react"
 import styles from "./index.module.css"
+import UserAvatar from "../UserAvatar"
 import CommentBox from "../CommentBox"
 import { KebabMenu } from "components/common/icons/KebabMenu"
 import { ChatBubble } from "components/common/icons/ChatBubble"
@@ -34,7 +35,7 @@ const CommentBlock = (props: CommentBlockType) => {
 		<div className={styles.container} onClick={onClick}>
 			<div className={styles.meta}>
 				<div className={styles.user}>
-					<div className={styles.picture} />
+					<UserAvatar name={data.created_by?.name} picture={data.created_by?.picture} />
 					<div>
 						<div className={styles.userName}>{data.created_by?.name}</div>
 						{timestamp ? (
