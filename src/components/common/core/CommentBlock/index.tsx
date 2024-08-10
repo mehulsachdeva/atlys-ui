@@ -9,7 +9,8 @@ import { formatCommentTimestamp } from "utils/comment"
 
 type CommentType = {
 	id: number
-	created_by: { name: string; picture?: string }
+	created_by: number // Created by user id
+	created_by_user: { name: string; picture?: string } // Created by user details
 	created_at: string
 	updated_at: string
 	highlighter?: string
@@ -24,6 +25,7 @@ interface CommentBlockType {
 
 const CommentBlock = (props: CommentBlockType) => {
 	const { data, onClick } = props
+	const userDetails = data.created_by_user || {}
 	const timestamp = formatCommentTimestamp(data.created_at)
 	const isEdited =
 		isValidDate(new Date(data.created_at)) &&
@@ -35,9 +37,9 @@ const CommentBlock = (props: CommentBlockType) => {
 		<div className={styles.container} onClick={onClick}>
 			<div className={styles.meta}>
 				<div className={styles.user}>
-					<UserAvatar name={data.created_by?.name} picture={data.created_by?.picture} />
+					<UserAvatar name={userDetails.name} picture={userDetails.picture} />
 					<div>
-						<div className={styles.userName}>{data.created_by?.name}</div>
+						<div className={styles.userName}>{userDetails.name}</div>
 						{timestamp ? (
 							<div className={styles.timestamp}>
 								<span>{timestamp}</span>
@@ -53,7 +55,7 @@ const CommentBlock = (props: CommentBlockType) => {
 			<div className={styles.comment}>
 				<CommentBox highlighter={data.highlighter} comment={data.comment} readOnly />
 			</div>
-			{!!data?.replies ? (
+			{!!data.replies ? (
 				<div className={styles.replies}>
 					<ChatBubble width={20} height={20} fill="#C5C7CA" />
 					<div>
