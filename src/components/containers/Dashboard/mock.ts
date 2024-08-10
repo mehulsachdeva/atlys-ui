@@ -1,8 +1,3 @@
-export const user = {
-	name: "Jane",
-	picture: "",
-}
-
 export const comments = [
 	{
 		id: 1,

@@ -1,5 +1,6 @@
-import { memo, useState, useCallback } from "react"
+import { memo, useState, useCallback, useContext } from "react"
 import styles from "./index.module.css"
+import { AuthContext } from "contexts/auth"
 import PasswordInput from "../PasswordInput"
 import Input from "components/common/shared/Input"
 import Button from "components/common/shared/Button"
@@ -16,6 +17,7 @@ const LoginCard = (props: LoginCardType) => {
 	const { defaultForm = "login", onSuccess } = props
 	const [isLoginForm, setIsLoginForm] = useState(defaultForm === "login")
 	const [values, setValues] = useState({ email: "", username: "", password: "" })
+	const { login, register } = useContext<any>(AuthContext)
 
 	const handleChange = useCallback((key: string, value: string) => {
 		setValues((curr) => ({ ...curr, [key]: value }))
@@ -23,12 +25,12 @@ const LoginCard = (props: LoginCardType) => {
 
 	const handleSubmitClick = useCallback(() => {
 		if (isLoginForm) {
-			/** Login the user */
+			login(values)
 		} else {
-			/** Register the user and login */
+			register(values)
 		}
 		onSuccess?.()
-	}, [isLoginForm, onSuccess])
+	}, [values, isLoginForm, onSuccess])
 
 	return (
 		<div className={styles.container}>
