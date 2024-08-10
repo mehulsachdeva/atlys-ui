@@ -3,14 +3,14 @@ import styles from "./index.module.css"
 import { calcHeight } from "./helpers"
 import { INPUT_DIMENSIONS } from "./constants"
 
-interface CommentBoxType {
+interface CommentInputType {
 	comment?: string
 	highlighter?: string
 	readOnly?: boolean
 	onChange?: (comment: string) => void
 }
 
-const CommentBox = (props: CommentBoxType) => {
+const CommentInput = (props: CommentInputType) => {
 	const { comment, highlighter, readOnly = false, onChange } = props
 	const inputRef = useRef<any>(null)
 
@@ -54,4 +54,4 @@ const CommentBox = (props: CommentBoxType) => {
 	)
 }
 
-export default memo(CommentBox)
+export default memo(CommentInput)
