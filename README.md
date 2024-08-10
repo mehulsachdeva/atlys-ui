@@ -27,6 +27,20 @@
   - A session is established by storing user information in local storage upon successful login.
   - Logging out clears the session and redirects the users to the Login page.
 
+## Mock Credentials
+
+For testing purposes, the following mock user credentials are predefined:
+
+- **User 1:**
+  - **Username**: Jane
+  - **Email**: jane@example.com
+  - **Password**: jane123
+
+- **User 2:**
+  - **Username**: Patrick
+  - **Email**: patrick@example.com
+  - **Password**: patrick123
+
 ## Getting Started
 
 To get started with Atlys UI, first clone the repository using:
