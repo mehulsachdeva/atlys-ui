@@ -27,11 +27,10 @@ const LoginCard = (props: LoginCardType) => {
 		if (!values.password || !values.username.trim() || (!isLoginForm && !values.email.trim()))
 			return
 		if (isLoginForm) {
-			login(values)
+			login(values, onSuccess)
 		} else {
-			register(values)
+			register(values, onSuccess)
 		}
-		onSuccess?.()
 	}, [values, isLoginForm, onSuccess])
 
 	return (
