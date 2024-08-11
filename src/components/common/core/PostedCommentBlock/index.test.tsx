@@ -16,8 +16,7 @@ const data = {
 
 describe("Posted Comment Block", () => {
 	const props = { data, onClick: jest.fn() }
-
-	test("is rendered", () => {
+	test("rendered", () => {
 		render(<PostedCommentBlock {...props} />)
 		const element = document.querySelector(".textarea")
 		expect(element).not.toHaveAttribute("contenteditable")
@@ -30,8 +29,7 @@ describe("Posted Comment Block", () => {
 		const timestamp = formatCommentTimestamp(data.updated_at)
 		timestamp && expect(screen.getByText(timestamp)).toBeInTheDocument()
 	})
-
-	test("is rendered correctly after edit", () => {
+	test("rendered if edited", () => {
 		render(
 			<PostedCommentBlock
 				{...props}
@@ -40,8 +38,7 @@ describe("Posted Comment Block", () => {
 		)
 		expect(screen.getByText(/Edited/i)).toBeInTheDocument()
 	})
-
-	test("is rendered correctly for 1 reply", () => {
+	test("render for 1 reply", () => {
 		render(<PostedCommentBlock {...props} data={{ ...props.data, replies: 1 }} />)
 		expect(screen.getByText(/1 comment/i)).toBeInTheDocument()
 	})

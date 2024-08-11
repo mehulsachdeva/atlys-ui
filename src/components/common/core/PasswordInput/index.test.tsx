@@ -3,24 +3,18 @@ import { render, screen, fireEvent } from "@testing-library/react"
 import PasswordInput from "."
 
 describe("Password Input", () => {
-	const props = {
-		placeholder: "Test placeholder",
-		onChange: jest.fn(),
-	}
-
-	test("is rendered", () => {
+	const props = { placeholder: "Test placeholder", onChange: jest.fn() }
+	test("rendered", () => {
 		render(<PasswordInput {...props} />)
 		expect(screen.getByPlaceholderText(props.placeholder)).toBeInTheDocument()
 	})
-
-	test("on change is called", () => {
+	test("onChange called", () => {
 		render(<PasswordInput {...props} />)
 		const inputElement = screen.getByPlaceholderText(props.placeholder)
-		fireEvent.change(inputElement, { target: { value: "New Value" } })
+		fireEvent.change(inputElement, { target: { value: "New value" } })
 		expect(props.onChange).toHaveBeenCalled()
 	})
-
-	test("is password visible on toggle click", () => {
+	test("password visible on toggle click", () => {
 		render(<PasswordInput {...props} />)
 		const inputElement = screen.getByPlaceholderText(props.placeholder)
 		const toggleElement = document.querySelector(".togglePassword")
