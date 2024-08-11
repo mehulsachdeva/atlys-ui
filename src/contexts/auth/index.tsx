@@ -77,9 +77,13 @@ const AuthContextProvider = (props: AuthContextType) => {
 	const authenticate = (username: string, password: string) => {
 		let user = null
 		try {
+			username = username.toLowerCase()
 			const users = JSON.parse(localStorage.getItem("users") || "[]")
 			const authenticatedUser = users.find((user: UserType) => {
-				return (user.username === username || user.email === username) && user.password === password
+				return (
+					(user.username.toLowerCase() === username || user.email?.toLowerCase() === username) &&
+					user.password === password
+				)
 			})
 			if (authenticatedUser) {
 				user = authenticatedUser
