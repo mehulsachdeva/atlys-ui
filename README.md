@@ -63,4 +63,4 @@ This bundles React in production mode and optimizes the build for the best perfo
 
 ### Demo
 
-[![Watch the video](https://github.com/mehulsachdeva/atlys-ui/blob/auth-setup/demo/thumbnail.png)](https://github.com/mehulsachdeva/atlys-ui/blob/auth-setup/demo/demo.mov)
+[![Watch the video](https://github.com/mehulsachdeva/atlys-ui/blob/auth-setup/demo/thumbnail.png)](https://github.com/mehulsachdeva/atlys-ui/blob/auth-setup/demo/demo.webm)
