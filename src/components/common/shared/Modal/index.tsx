@@ -34,6 +34,21 @@ const Modal = (props: ModalType) => {
 		}
 	}, [isOpen, animationSpeed])
 
+	useEffect(() => {
+		const body = document.body
+		if (open) {
+			body.style.position = "relative"
+			body.style.overflow = "hidden"
+		} else {
+			body.style.removeProperty("position")
+			body.style.removeProperty("overflow")
+		}
+		return () => {
+			body.style.removeProperty("position")
+			body.style.removeProperty("overflow")
+		}
+	}, [open])
+
 	const component = (
 		<div
 			style={{ "--animation-speed": `${animationSpeed}ms` } as CSSProperties}
