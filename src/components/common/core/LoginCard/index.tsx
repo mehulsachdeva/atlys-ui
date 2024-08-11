@@ -1,11 +1,18 @@
-import { memo, useState, useCallback } from "react"
+import { memo, useState, useEffect, useCallback, useContext } from "react"
 import styles from "./index.module.css"
+import { AuthContext } from "contexts/auth"
 import PasswordInput from "../PasswordInput"
 import Input from "components/common/shared/Input"
 import Button from "components/common/shared/Button"
 import { ArrowRight } from "components/common/icons/ArrowRight"
 
 export type DefaultFormType = "login" | "register"
+
+type ErrorType = {
+	email?: boolean
+	username?: boolean
+	password?: boolean
+}
 
 interface LoginCardType {
 	defaultForm?: DefaultFormType
@@ -16,19 +23,56 @@ const LoginCard = (props: LoginCardType) => {
 	const { defaultForm = "login", onSuccess } = props
 	const [isLoginForm, setIsLoginForm] = useState(defaultForm === "login")
 	const [values, setValues] = useState({ email: "", username: "", password: "" })
+	const [errors, setErrors] = useState<ErrorType>({
+		email: false,
+		username: false,
+		password: false,
+	})
+	const { login, register } = useContext<any>(AuthContext)
+	const areFieldsEmpty =
+		!values.password || !values.username.trim() || (!isLoginForm && !values.email.trim())
+
+	useEffect(() => {
+		setErrors((curr) => ({ ...curr, email: false }))
+	}, [values.email])
+
+	useEffect(() => {
+		setErrors((curr) => ({ ...curr, username: false }))
+	}, [values.username])
+
+	useEffect(() => {
+		setErrors((curr) => ({ ...curr, password: false }))
+	}, [values.password])
+
+	useEffect(() => {
+		setErrors({ email: false, username: false, password: false })
+	}, [isLoginForm])
 
 	const handleChange = useCallback((key: string, value: string) => {
 		setValues((curr) => ({ ...curr, [key]: value }))
 	}, [])
 
 	const handleSubmitClick = useCallback(() => {
-		if (isLoginForm) {
-			/** Login the user */
-		} else {
-			/** Register the user and login */
+		let errors: ErrorType = {}
+		if (!isLoginForm && !values.email) {
+			errors.email = true
 		}
-		onSuccess?.()
-	}, [isLoginForm, onSuccess])
+		if (!values.username) {
+			errors.username = true
+		}
+		if (!values.password) {
+			errors.password = true
+		}
+		if (Object.keys(errors).length > 0) {
+			setErrors((curr) => ({ ...curr, ...errors }))
+		} else {
+			if (isLoginForm) {
+				login(values, onSuccess)
+			} else {
+				register(values, onSuccess)
+			}
+		}
+	}, [values, isLoginForm, areFieldsEmpty, onSuccess])
 
 	return (
 		<div className={styles.container}>
@@ -48,7 +92,8 @@ const LoginCard = (props: LoginCardType) => {
 									type="text"
 									value={values.email}
 									placeholder="Enter your email"
-									onChange={(e) => handleChange("email", e.target.value)}
+									error={errors.email}
+									onChange={(e) => handleChange("email", e.target.value.trim())}
 								/>
 							</div>
 						</div>
@@ -64,7 +109,8 @@ const LoginCard = (props: LoginCardType) => {
 								placeholder={
 									isLoginForm ? "Enter your email or username" : "Choose a preferred username"
 								}
-								onChange={(e) => handleChange("username", e.target.value)}
+								error={errors.username}
+								onChange={(e) => handleChange("username", e.target.value.trim())}
 							/>
 						</div>
 					</div>
@@ -79,6 +125,7 @@ const LoginCard = (props: LoginCardType) => {
 						</div>
 						<PasswordInput
 							value={values.password}
+							error={errors.password}
 							placeholder={isLoginForm ? "Enter your password" : "Choose a strong password"}
 							onChange={(e) => handleChange("password", e.target.value)}
 						/>
