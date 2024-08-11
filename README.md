@@ -1,5 +1,7 @@
 # Atlys UI
 
+### [https://atlys-ui-mehulsachdevas-projects.vercel.app/](https://atlys-ui-mehulsachdevas-projects.vercel.app/)
+
 ## Version: 1.0.0
 
 ### Technologies Used
@@ -39,6 +41,11 @@ For testing purposes, the following mock user credentials are predefined:
   - **Username**: `Patrick`
   - **Email**: `patrick@example.com`
   - **Password**: `patrick123`
+
+### Pages
+
+Login and Registration - [https://atlys-ui-mehulsachdevas-projects.vercel.app/](https://atlys-ui-mehulsachdevas-projects.vercel.app/)<br/>
+Dashboard - [https://atlys-ui-mehulsachdevas-projects.vercel.app/dashboard](https://atlys-ui-mehulsachdevas-projects.vercel.app/dashboard)
  
 ### Demo
 
