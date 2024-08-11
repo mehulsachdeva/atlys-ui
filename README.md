@@ -16,7 +16,7 @@
 
 - **Login Page**: Authenticate users with predefined mock credentials stored in local storage.
 - **Registration**: Allow new users to register and add them to the local storage user list.
-- **Dashboard**: An area accessible to all users. Includes a logout button to end the session (if exists).
+- **Dashboard**: An area accessible to all users to post and see the posted comments. If logged out user tries to access any feature on this page, they'll be asked to register or login. Includes a logout button to end the session (if exists).
 
 ### Authentication Mechanism
 
