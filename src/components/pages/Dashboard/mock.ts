@@ -35,7 +35,7 @@ export const comments = [
 				"https://s3-alpha-sig.figma.com/img/a50a/a686/c235d3ee2b054cb561d4d7772e564df4?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=D2qHdJviStoZ3m7oLtVyhp598Iuq7tQQnmsObSRsjdeCCWI-cGwDovJhlYY-aqhHH76Ir8rl~Gu5tG9tpTGOm2kOcuzVaQ35jSJ3gxirAZDtzaH1DGbUxNf8PYRiuHWmgrq11XuDZn0YyxIwUUeLr5XlEAYXqQkFtpWazgxlUHvy4STHhMxSnuf-JzkVlE4f8omJYzxcS-~NCPorF~C4M~ofT07mWUYdBpHzu5R2ueJMWuyKDfx-vOo-na~yzYP0o~QCAg6~QRKtSP6Q-BcJlYBc8Dw8B5GsRBAB2MdhgyMzaubOwyyNLMLiM9R1BIggLdGBb5VH3ZYwohPXM9XBEg__",
 		},
 		created_at: new Date(now - 10 * 60000).toISOString(),
-		updated_at: mockDates.date2, // Just for displaying 8 mins ago on UI with with edited label
+		updated_at: mockDates.date2, // Just for displaying 8 mins ago on UI with edited label
 		highlighter: "😞",
 		comment:
 			"Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
