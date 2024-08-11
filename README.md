@@ -60,3 +60,7 @@ This will start the server, and you can view the app in your browser at [http://
 <br />In order to build the app for <b>production</b>, use:
 ### `npm run build`
 This bundles React in production mode and optimizes the build for the best performance.
+
+### Demo
+
+[![Watch the video](https://github.com/mehulsachdeva/atlys-ui/blob/auth-setup/demo/thumbnail.png)](https://github.com/mehulsachdeva/atlys-ui/blob/auth-setup/demo/demo.mov)
