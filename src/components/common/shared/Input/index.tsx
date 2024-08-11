@@ -8,11 +8,12 @@ interface InputType {
 	padding?: string | number
 	placeholder?: string
 	value?: string
+	error?: boolean
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const Input = (props: InputType) => {
-	const { type, fontSize = 16, padding = 12, placeholder, value, onChange } = props
+	const { type, fontSize = 16, padding = 12, placeholder, value, error = false, onChange } = props
 
 	return (
 		<input
@@ -22,7 +23,7 @@ const Input = (props: InputType) => {
 					"--font-size": convertToPixels(fontSize),
 				} as CSSProperties
 			}
-			className={styles.input}
+			className={`${styles.input} ${error ? styles.error : ""}`}
 			type={type}
 			placeholder={placeholder}
 			value={value}

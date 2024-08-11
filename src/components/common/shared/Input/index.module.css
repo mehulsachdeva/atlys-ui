@@ -24,3 +24,7 @@
 .passwordInput {
 	position: relative;
 }
+
+.error, .error:focus, .error:active {
+	border-color: #f44336;
+}
