@@ -18,14 +18,14 @@ const LoginCard = (props: LoginCardType) => {
 	const [isLoginForm, setIsLoginForm] = useState(defaultForm === "login")
 	const [values, setValues] = useState({ email: "", username: "", password: "" })
 	const { login, register } = useContext<any>(AuthContext)
-	const isSubmitDisabled =
-		!values.password || !values.username.trim() || (!isLoginForm && !values.email.trim())
 
 	const handleChange = useCallback((key: string, value: string) => {
 		setValues((curr) => ({ ...curr, [key]: value }))
 	}, [])
 
 	const handleSubmitClick = useCallback(() => {
+		if (!values.password || !values.username.trim() || (!isLoginForm && !values.email.trim()))
+			return
 		if (isLoginForm) {
 			login(values)
 		} else {
@@ -88,7 +88,7 @@ const LoginCard = (props: LoginCardType) => {
 						/>
 					</div>
 					<div className={styles.buttonWrapper}>
-						<Button width="100%" disabled={isSubmitDisabled} onClick={handleSubmitClick}>
+						<Button width="100%" onClick={handleSubmitClick}>
 							{isLoginForm ? "Login now" : "Continue"}
 						</Button>
 					</div>
