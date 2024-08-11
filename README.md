@@ -42,7 +42,7 @@ For testing purposes, the following mock user credentials are predefined:
  
 ### Demo
 
-[Watch the video](https://github.com/mehulsachdeva/atlys-ui/blob/auth-setup/demo/demo.webm)
+[Watch the video](https://github.com/mehulsachdeva/atlys-ui/blob/main/demo/demo.webm)
 
 ## Getting Started
 
