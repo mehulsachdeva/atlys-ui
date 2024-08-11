@@ -11,16 +11,13 @@ body,
 *::before,
 *::after {
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
 	font-family: "Inter", sans-serif;
 	background: #131319;
 	color: #ffffff;
-}
-
-body, input {
-	letter-spacing: 0.15px;
 }
 
 #root > div {
