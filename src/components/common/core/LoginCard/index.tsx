@@ -44,6 +44,10 @@ const LoginCard = (props: LoginCardType) => {
 		setErrors((curr) => ({ ...curr, password: false }))
 	}, [values.password])
 
+	useEffect(() => {
+		setErrors({ email: false, username: false, password: false })
+	}, [isLoginForm])
+
 	const handleChange = useCallback((key: string, value: string) => {
 		setValues((curr) => ({ ...curr, [key]: value }))
 	}, [])
