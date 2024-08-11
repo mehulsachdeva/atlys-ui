@@ -14,8 +14,11 @@
 
 ### Features
 
+This mini authentication app consists of a frontend interface utilizing local storage to manage the user data and handle authentication process.
 - **Login Page**: Authenticate users with predefined mock credentials stored in local storage.
+
 - **Registration**: Allow new users to register and add them to the local storage user list.
+
 - **Dashboard**: An area accessible to all users to post and see the posted comments. If logged out user tries to access any feature on this page, they'll be asked to register or login. Includes a logout button to end the session (if exists).
 
 ### Authentication Mechanism
@@ -24,9 +27,10 @@
   - On the initial load, a set of predefined mock users is saved to local storage.
   - During login, user credentials are validated against the stored list.
   - New registrations are appended to the local storage user list.
+
 - **User Sessions**:
-  - A session is established by storing user information in local storage upon successful login.
-  - Logging out clears the session and redirects the users to the login page.
+  - A session is established by storing the user information in local storage upon successful login.
+  - Logging out clears the session.
 
 ### Mock Credentials
 
