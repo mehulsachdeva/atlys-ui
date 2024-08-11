@@ -51,6 +51,11 @@ Dashboard - [https://atlys-ui-mehulsachdevas-projects.vercel.app/dashboard](http
 
 [Watch the video](https://github.com/mehulsachdeva/atlys-ui/blob/main/demo/demo.webm)
 
+| ![Placeholder Image 1](https://github.com/mehulsachdeva/atlys-ui/blob/main/demo/screenshot1.webp) | ![Placeholder Image 2](https://github.com/mehulsachdeva/atlys-ui/blob/main/demo/screenshot2.webp) |
+|:---------------------------------------------:|:---------------------------------------------:|
+| ![Placeholder Image 3](https://github.com/mehulsachdeva/atlys-ui/blob/main/demo/screenshot3.webp) | ![Placeholder Image 4](https://github.com/mehulsachdeva/atlys-ui/blob/main/demo/screenshot4.webp) |
+
+
 ## Getting Started
 
 To get started with Atlys UI, first clone the repository using:
