@@ -46,12 +46,13 @@ const AuthContextProvider = (props: AuthContextType) => {
 	/* Validate user login which gives user data and redirect accordingly */
 	const login = (user: UserType, callback?: () => void) => {
 		const authenticatedUser = authenticate(user.username, user.password)
-		if (!authenticatedUser) return
+		if (!authenticatedUser) return false
 		delete authenticatedUser.password
 		localStorage.setItem("logged_user", JSON.stringify(authenticatedUser))
 		setUser({ ...authenticatedUser, logged: true })
 		navigate("/dashboard")
 		callback?.()
+		return authenticatedUser
 	}
 
 	/* Register user and redirect accordingly */
