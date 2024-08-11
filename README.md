@@ -1,14 +1,55 @@
 # Atlys UI
 
+### [https://atlys-ui-mehulsachdevas-projects.vercel.app/](https://atlys-ui-mehulsachdevas-projects.vercel.app/)
+
 ## Version: 1.0.0
 
-## Technologies Used
+### Technologies Used
 - React
 - TypeScript
 - CSS Modules
 
-## Development Tools
+### Development Tools
 - Husky: Configured to run formatting on commits.
+
+### Features
+
+- **Login Page**: Authenticate users with predefined mock credentials stored in local storage.
+- **Registration**: Allow new users to register and add them to the local storage user list.
+- **Dashboard**: An area accessible to all users to post and see the posted comments. If logged out user tries to access any feature on this page, they'll be asked to register or login. Includes a logout button to end the session (if exists).
+
+### Authentication Mechanism
+
+- **Local Storage**:
+  - On the initial load, a set of predefined mock users is saved to local storage.
+  - During login, user credentials are validated against the stored list.
+  - New registrations are appended to the local storage user list.
+- **User Sessions**:
+  - A session is established by storing user information in local storage upon successful login.
+  - Logging out clears the session and redirects the users to the login page.
+
+### Mock Credentials
+
+For testing purposes, the following mock user credentials are predefined:
+
+- **User 1:**
+  - **Username**: `Jane`
+  - **Email**: `jane@example.com`
+  - **Password**: `jane123`
+
+- **User 2:**
+  - **Username**: `Patrick`
+  - **Email**: `patrick@example.com`
+  - **Password**: `patrick123`
+
+### Pages
+
+Login and Registration - [https://atlys-ui-mehulsachdevas-projects.vercel.app/](https://atlys-ui-mehulsachdevas-projects.vercel.app/)<br/>
+Dashboard - [https://atlys-ui-mehulsachdevas-projects.vercel.app/dashboard](https://atlys-ui-mehulsachdevas-projects.vercel.app/dashboard)
+ 
+### Demo
+
+[Watch the video](https://github.com/mehulsachdeva/atlys-ui/blob/main/demo/demo.webm)
 
 ## Getting Started
 

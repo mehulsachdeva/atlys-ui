@@ -7,7 +7,7 @@
 	padding: var(--padding);
 	border-radius: 4px;
 	border: 1.5px solid #35373b;
-	transition: border-color 0.2s ease-in;
+	transition: border-color 0.1s ease-in;
 }
 
 .input::placeholder {
@@ -23,4 +23,8 @@
 
 .passwordInput {
 	position: relative;
+}
+
+.error, .error:focus, .error:active {
+	border-color: #f44336;
 }

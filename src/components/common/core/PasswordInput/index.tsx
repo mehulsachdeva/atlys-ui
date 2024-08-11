@@ -6,11 +6,12 @@ import { Eye } from "components/common/icons/Eye"
 interface PasswordInputType {
 	value?: string
 	placeholder?: string
+	error?: boolean
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const PasswordInput = (props: PasswordInputType) => {
-	const { placeholder, onChange } = props
+	const { placeholder, error = false, onChange } = props
 	const [value, setValue] = useState(props.value || "")
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
@@ -32,6 +33,7 @@ const PasswordInput = (props: PasswordInputType) => {
 				type={!isPasswordVisible ? "password" : "text"}
 				placeholder={placeholder || "Enter your password"}
 				value={value}
+				error={error}
 				padding="12px 40px 12px 12px"
 				fontSize={value.length > 0 && !isPasswordVisible ? 21 : 16}
 				onChange={handleChange}
