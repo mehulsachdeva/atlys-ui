@@ -26,7 +26,7 @@
   - New registrations are appended to the local storage user list.
 - **User Sessions**:
   - A session is established by storing user information in local storage upon successful login.
-  - Logging out clears the session and redirects the users to the Login page.
+  - Logging out clears the session and redirects the users to the login page.
 
 ### Mock Credentials
 
